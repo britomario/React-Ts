@@ -1,0 +1,57 @@
+/* CSS */
+.main-container {
+    width: 80%;
+    margin: 0 auto;
+}
+.container-search-cep {
+    display: flex;
+    flex-direction: column;
+    max-width: 430px;
+    width: 100%;
+}
+h2 {
+    color: #1B416B;
+    font-weight: 700;
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+label {
+    margin-bottom: 6px;
+}
+span {
+    color: red;
+}
+input {
+    height: 42px;
+    border: 1px solid #ccc;
+    padding: 0 8px;
+}
+button {
+    width: 80px;
+    height: 2.25rem;
+    font-size: 1rem;
+    background: #3371AD;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    margin: 1rem 0;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+thead th,
+tbody td {
+    padding: 10px;
+    text-align: left;
+}
+
+thead th {
+    border-right: 1px solid #ccc;
+    color: #fff;
+}
+
+thead th {
+    background: #3371AD;
+}
