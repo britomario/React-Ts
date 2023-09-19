@@ -25,3 +25,9 @@
     padding: 8px;
     text-decoration: none;
 }
+
+.error {
+    font-size: 32px;
+    color: red;
+    text-align: center;
+}
