@@ -1,5 +1,4 @@
 import Perfil from "./components/Perfil";
-import Formulario from "./Components/Formulario";
 import { useState } from "react";
 import ReposList from "./components/ReposList";
 
@@ -16,10 +15,6 @@ function App() {
           <ReposList nomeUsuario={nomeUsuario}/>
         </>
       )}
-      {/* {formularioVisivel && (
-        <Formulario />
-      )}
-      <button type="button" onClick={() => setFormularioVisivel(!formularioVisivel)}>toggle form</button> */}
     </>
   )
 }
