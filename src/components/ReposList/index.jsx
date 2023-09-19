@@ -4,6 +4,7 @@ import styles from './ReposList.module.css';
 function ReposList({ nomeUsuario }) {
     const [repos, setRepos] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [error, setError] = (false);
 
     useEffect(() => {
         setLoading(true)
@@ -15,30 +16,39 @@ function ReposList({ nomeUsuario }) {
                     setRepos(resJson)
                 }, 3000)
             })
+            .catch(e => {
+                setError(true)
+            })
     }, [nomeUsuario]);
     return (
-        <div className="container">
-            {loading ? (
-                <h1>Carregando...</h1>
-            ) : (
-                <ul className={styles.list}>
-                    {/* {repos.map((repositorio => ())} - sem desestruturação */}
-                    {repos.map(({ id, name, language, html_url }) => (
-                        <li className={styles.listItem} key={id}>
-                            <div className={styles.itemName}>
-                                <b>Nome: </b> {name} <br />
-                            </div>
-                            <div className={styles.itemLanguage}>
-                                <b>Linguagem: </b>
-                                {language}
-                            </div>
-                            <a className={styles.itemLink} href={html_url} target="_blank" rel="noreferrer">Visitar no Github</a>
-                        </li>
+        setError ? (
+            <>
+                <h2 className={styles.error}>Verifique os dados inseridos!!!</h2>
+            </>
+        ) : (
+            <div className="container">
+                {loading ? (
+                    <h1>Carregando...</h1>
+                ) : (
+                    <ul className={styles.list}>
+                        {/* {repos.map((repositorio => ())} - sem desestruturação */}
+                        {repos.map(({ id, name, language, html_url }) => (
+                            <li className={styles.listItem} key={id}>
+                                <div className={styles.itemName}>
+                                    <b>Nome: </b> {name} <br />
+                                </div>
+                                <div className={styles.itemLanguage}>
+                                    <b>Linguagem: </b>
+                                    {language}
+                                </div>
+                                <a className={styles.itemLink} href={html_url} target="_blank" rel="noreferrer">Visitar no Github</a>
+                            </li>
 
-                    ))}
-                </ul>
-            )}
-        </div>
+                        ))}
+                    </ul>
+                )}
+            </div>
+        )
     )
 }
 
