@@ -1,12 +1,14 @@
-import  './perfil.css';
+import styles from './Perfil.module.css';
 
-function Perfil ({ nome, endereco }) {
+function Perfil ({ nomeUsuario}) {
 
     return (
-        <>
-            <img src={endereco} className='perfil-avatar'/>
-            <h3 className='perfil-titulo'>{nome}</h3>
-        </>
+        <header className={styles.header}>
+            <img src={`https://github.com/${nomeUsuario}.png`} className={styles.avatar}/>
+            <h1 className={styles.name}>
+                {nomeUsuario}
+            </h1>
+        </header>
     )
 }
 
