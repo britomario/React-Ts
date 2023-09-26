@@ -7,7 +7,10 @@ function App() {
   const [nomeUsuario, setNomeUsuario] = useState('')
   return (
     <>
-      <input type="text" onBlur={(e) => setNomeUsuario(e.target.value)} />
+    <div className="container">
+      <h2>Insira o nome de usuário do GitHub para pesquisar</h2>
+      <input placeholder="nomeusuario" className="input-search" type="text" onBlur={(e) => setNomeUsuario(e.target.value)} />
+    </div>
 
       {nomeUsuario.length > 4 && (
         <>

@@ -11,6 +11,11 @@
     width: 100%;
 }
 
+.input-search {
+    padding: 5px;
+    margin: .75rem 0;
+}
+
 :root {
     --corPrincipal: #95afc0;
     --corSecundaria: #111;
